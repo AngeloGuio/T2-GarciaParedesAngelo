@@ -1,0 +1,64 @@
+Create database BDEvaluacion;
+use BDEvaluacion;
+CREATE TABLE usuario (
+	idusuario INT auto_increment NOT NULL,
+	nomusuario varchar(100) NULL,
+	email varchar(200) NULL,
+	password varchar(300) NULL,
+	nombres varchar(100) NULL,
+	apellidos varchar(100) NULL,
+	activo BOOL NULL,
+	CONSTRAINT users_pk PRIMARY KEY (idusuario)
+);
+
+
+CREATE TABLE rol (
+	idrol INT auto_increment NOT NULL,
+	nomrol varchar(300) NULL,
+	CONSTRAINT roles_pk PRIMARY KEY (idrol)
+);
+
+
+CREATE TABLE usuario_rol (
+	idusuario INT NOT NULL,
+	idrol INT NOT NULL,
+	CONSTRAINT user_role_pk PRIMARY KEY (idusuario, idrol),
+	CONSTRAINT user_role_FK FOREIGN KEY (idusuario) REFERENCES usuario(idusuario),
+	CONSTRAINT user_role_FK_1 FOREIGN KEY (idrol) REFERENCES rol(idrol)
+);
+
+CREATE TABLE Medico
+(
+ IdMedico 		INT NOT NULL AUTO_INCREMENT,
+ NomMedico		VARCHAR(50) NOT NULL,
+ ApeMedico 		VARCHAR(50) NOT NULL,
+ FechNacMedico	DATE NOT NULL,
+ PRIMARY KEY (IdMedico)
+);
+
+CREATE TABLE Especialidad
+(
+ IdEspecialidad 		INT NOT NULL AUTO_INCREMENT,
+ Titulo 			VARCHAR(250) NOT NULL,
+ Funcion 			VARCHAR(250) NOT NULL,
+ FechGraduacion	DATE NOT NULL,
+ IdMedico 			INT NOT NULL,
+ PRIMARY KEY (IdEspecialidad),
+ FOREIGN KEY (IdMedico) REFERENCES Medico(IdMedico)
+ );
+
+  select * from Medico;
+
+   select * from Especialidad;
+
+ INSERT INTO Medico VALUES(null,"Jose","Martinez","2021-01-12");
+ INSERT INTO Medico VALUES(null,"Luis","Galvez","2020-04-10");
+ INSERT INTO Medico VALUES(null,"Angel","Gomez","2022-08-05");
+ INSERT INTO Medico VALUES(null,"Ricardo","Limay","2021-07-11");
+ INSERT INTO Medico VALUES(null,"Moises","Guerrero","2020-04-12");
+
+ INSERT INTO Especialidad VALUES(null, "cirujano","cirujias","2018-02-09",2);
+ INSERT INTO Especialidad VALUES(null, "cirujano","protecis","2016-01-07",3);
+ INSERT INTO Especialidad VALUES(null, "doctor","topico","2017-08-12",4);
+ INSERT INTO Especialidad VALUES(null, "doctor","dermatologia","2016-04-01",5);
+ INSERT INTO Especialidad VALUES(null, "cirujano","rinoplastia","2017-03-12",6);
