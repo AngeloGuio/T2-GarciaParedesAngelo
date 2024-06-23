@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.cibertec.T2_GarciaParedesAngelo.exception.ResourceNotFoundException;
-import pe.edu.cibertec.T2_GarciaParedesAngelo.model.bd.Especialidad;
 import pe.edu.cibertec.T2_GarciaParedesAngelo.model.bd.Medico;
 import pe.edu.cibertec.T2_GarciaParedesAngelo.service.MedicoService;
 
@@ -57,7 +56,7 @@ public class MedicoController {
                         + id +" no existe"));
         newMedico.setNommedico(medico.getNommedico());
         newMedico.setApemedico(medico.getApemedico());
-        newMedico.setFechanacmedico(medico.getFechanacmedico());
+        newMedico.setFechnacmedico(medico.getFechnacmedico());
         return new ResponseEntity<>(
                 medicoService.guardarMedico(newMedico),
                 HttpStatus.OK);

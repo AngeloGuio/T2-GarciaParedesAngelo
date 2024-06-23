@@ -13,6 +13,6 @@ public class Medico {
     private Integer idmedico;
     private String nommedico;
     private String apemedico;
-    private Date fechanacmedico;
+    private Date fechnacmedico;
 
 }

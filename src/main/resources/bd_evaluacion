@@ -1,5 +1,5 @@
-Create database BDEvaluacion;
-use BDEvaluacion;
+Create database bd_evaluacion;
+use bd_evaluacion;
 CREATE TABLE usuario (
 	idusuario INT auto_increment NOT NULL,
 	nomusuario varchar(100) NULL,
@@ -47,18 +47,17 @@ CREATE TABLE Especialidad
  FOREIGN KEY (IdMedico) REFERENCES Medico(IdMedico)
  );
 
-  select * from Medico;
+ select * from Medico;
+ select * from Especialidad;
 
-   select * from Especialidad;
+INSERT INTO Medico VALUES(null,"Jose","Martinez","2021-01-12");
+INSERT INTO Medico VALUES(null,"Luis","Galvez","2020-04-10");
+INSERT INTO Medico VALUES(null,"Angel","Gomez","2022-08-05");
+INSERT INTO Medico VALUES(null,"Ricardo","Limay","2021-07-11");
+INSERT INTO Medico VALUES(null,"Moises","Guerrero","2020-04-12");
 
- INSERT INTO Medico VALUES(null,"Jose","Martinez","2021-01-12");
- INSERT INTO Medico VALUES(null,"Luis","Galvez","2020-04-10");
- INSERT INTO Medico VALUES(null,"Angel","Gomez","2022-08-05");
- INSERT INTO Medico VALUES(null,"Ricardo","Limay","2021-07-11");
- INSERT INTO Medico VALUES(null,"Moises","Guerrero","2020-04-12");
-
- INSERT INTO Especialidad VALUES(null, "cirujano","cirujias","2018-02-09",2);
- INSERT INTO Especialidad VALUES(null, "cirujano","protecis","2016-01-07",3);
- INSERT INTO Especialidad VALUES(null, "doctor","topico","2017-08-12",4);
- INSERT INTO Especialidad VALUES(null, "doctor","dermatologia","2016-04-01",5);
- INSERT INTO Especialidad VALUES(null, "cirujano","rinoplastia","2017-03-12",6);
+INSERT INTO Especialidad VALUES(null, "cirujano","cirujias","2018-02-09",1);
+INSERT INTO Especialidad VALUES(null, "cirujano","protecis","2016-01-07",2);
+INSERT INTO Especialidad VALUES(null, "doctor","topico","2017-08-12",3);
+INSERT INTO Especialidad VALUES(null, "doctor","dermatologia","2016-04-01",4);
+INSERT INTO Especialidad VALUES(null, "cirujano","rinoplastia","2017-03-12",5);
