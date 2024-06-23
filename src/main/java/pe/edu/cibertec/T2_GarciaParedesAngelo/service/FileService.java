@@ -20,8 +20,6 @@ public class FileService implements IFileService{
 
     @Override
     public void guardarArchivos(List<MultipartFile> archivosList) throws Exception {
-        for(MultipartFile archivo : archivosList){
-            this.guardarArchivo(archivo);
-        }
+
     }
 }
