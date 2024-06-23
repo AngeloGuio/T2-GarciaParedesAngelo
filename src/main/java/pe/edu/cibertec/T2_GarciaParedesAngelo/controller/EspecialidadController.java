@@ -13,7 +13,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1")
+@RequestMapping(path = "api/v1/especialidad")
 public class EspecialidadController {
 
     private EspecialidadService especialidadService;
@@ -47,7 +47,7 @@ public class EspecialidadController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Especialidad> actualizarCategoria(
+    public ResponseEntity<Especialidad> actualizarEspecialidad(
             @PathVariable Integer id,
             @RequestBody Especialidad especialidad
     ){
